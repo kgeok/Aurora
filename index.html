@@ -18,7 +18,7 @@
         <br/>
         </section>
         <section>
-        <label>ZONES</label>
+        <label id="zones_lbl">ZONES</label>
         <br/>
         <input type="number" id="zones_txt" placeholder="1-20" min="1" max="20"/>
         <br/>
@@ -37,11 +37,36 @@
           console.log("Zones:");
           console.log(zones);
 
+          let options = document.createElement('input');
+          options.setAttribute('type', 'color');
+
+          let gen_btn = document.createElement('input');
+          gen_btn.setAttribute('type', 'submit');
+          gen_btn.id = 'gen_btn';
+          gen_btn.setAttribute('value', 'Create');
+          gen_btn.setAttribute('onclick', 'genZones()');
+
+          let reset_btn = document.createElement('input');
+          reset_btn.setAttribute('type', 'submit');
+          reset_btn.id = 'gen_btn';
+          reset_btn.setAttribute('value', 'Reset');
+          reset_btn.setAttribute('onclick', 'location.reload()');
+
           for (i = 0; i < zones; i++){
-          document.createElement('<input type="color" id="zones_clr" placeholder="Color"/>');
-          
+
+            let options = document.createElement('input');
+            options.setAttribute('type', 'color');
+            options.setAttribute('id', i);
+            document.body.appendChild(options);
+
           }
-          document.createElement('<br/><input type="submit" id="zones_genbtn" value="Create" onclick="genZones()"/>');
+          document.getElementById("zones_btn").remove();
+          document.getElementById("zones_txt").remove();
+          document.getElementById("zones_lbl").remove();
+         
+          document.body.appendChild(gen_btn);
+          document.body.appendChild(reset_btn);
+          
         }
         
         function genZones(){
