@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Aurora</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="style.css" media="screen">
+    <body>
+        <section>
+        <h1>aurora</h1>
+        <br/>
+        <h4>by Kevin George</h4>
+        <br/>
+        <br/>
+        </section>
+        <section>
+        <label>ZONES</label>
+        <br/>
+        <input type="number" id="zones_txt" placeholder="1-20" min="1" max="20"/>
+        <br/>
+        <input type="submit" id="zones_btn" value="Next" onclick="genZoneOptions()"/>
+
+        <script type="text/javascript">
+        
+        function genZoneOptions(){
+          var zonesinput = Math.abs(document.getElementById('zones_txt').value);
+          if (zonesinput > 20){
+            alert("Sorry, at this time, only 20 Zones are supported at a time.")
+            zonesinput = 20;
+            console.error("Input not Valid, setting to max supported.");
+          }
+          zones = zonesinput * zonesinput;
+          console.log("Zones:");
+          console.log(zones);
+
+          for (i = 0; i < zones; i++){
+          document.createElement('<input type="color" id="zones_clr" placeholder="Color"/>');
+          
+          }
+          document.createElement('<br/><input type="submit" id="zones_genbtn" value="Create" onclick="genZones()"/>');
+        }
+        
+        function genZones(){
+
+         console.log("Not finished...");
+
+        }
+
+        </script>
+
+        </section>
+    </body>
