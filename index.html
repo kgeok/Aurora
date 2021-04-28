@@ -33,6 +33,13 @@
             zonesinput = 20;
             console.error("Input not Valid, setting to max supported.");
           }
+
+          if (zonesinput == 0){
+            alert("Please Enter a Number greater than 0")
+            zonesinput = 1;
+            console.error("Input not Valid, setting to 1");
+          }
+
           zones = zonesinput * zonesinput;
           console.log("Zones:");
           console.log(zones);
@@ -52,25 +59,36 @@
           reset_btn.setAttribute('value', 'Reset');
           reset_btn.setAttribute('onclick', 'location.reload()');
 
+          
+
           for (i = 0; i < zones; i++){
 
             let options = document.createElement('input');
             options.setAttribute('type', 'color');
             options.setAttribute('id', i);
+            if (i % zonesinput == 0){
+            let lineBreak = document.createElement('br');
+            document.body.appendChild(lineBreak);
+            }
             document.body.appendChild(options);
 
           }
           document.getElementById("zones_btn").remove();
           document.getElementById("zones_txt").remove();
           document.getElementById("zones_lbl").remove();
-         
+
+          for (j = 0; j < 2; j++){
+           let lineBreak = document.createElement('br');
+           document.body.appendChild(lineBreak);
+          }
+
           document.body.appendChild(gen_btn);
           document.body.appendChild(reset_btn);
           
         }
         
         function genZones(){
-
+         alert ("For best results, set brightness to maximum desired and add a diffusion layer to your display.")
          console.log("Not finished...");
 
         }
