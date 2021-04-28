@@ -9,15 +9,14 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="style.css" media="screen">
-    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
-    <link rel="manifest" href="/icons/site.webmanifest">
-    <link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#323232">
-    <link rel="shortcut icon" href="/icons/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://github.com/kgeok/Aurora/raw/main/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://github.com/kgeok/Aurora/raw/main/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://github.com/kgeok/Aurora/raw/main/icons/favicon-16x16.png">
+    <link rel="manifest" href="https://github.com/kgeok/Aurora/raw/main/icons/site.webmanifest">
+    <link rel="mask-icon" href="https://github.com/kgeok/Aurora/raw/main/icons/safari-pinned-tab.svg" color="#323232">
+    <link rel="shortcut icon" href="https://github.com/kgeok/Aurora/raw/main/icons/favicon.ico">
     <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-config" content="/icons/browserconfig.xml">
-    <meta name="theme-color" content="#ffffff">
+    <meta name="msapplication-config" content="https://github.com/kgeok/Aurora/raw/main/icons/browserconfig.xml">
     <body>
         <section>
         <h1>aurora</h1>
@@ -38,7 +37,7 @@
         function genZoneOptions(){
           var zonesinput = Math.abs(document.getElementById('zones_txt').value);
           if (zonesinput > 20){
-            alert("Sorry, only a max of 20x20 is supported at this time.")
+            alert("Sorry, only a max of 20 x 20 is supported at this time.")
             zonesinput = 20;
             console.error("Input not valid, setting to max supported...");
           }
@@ -61,7 +60,7 @@
           gen_btn.id = 'gen_btn';
           gen_btn.setAttribute('value', 'Create');
           gen_btn.setAttribute('onclick', 'genZones()');
-          gen_btn.setAttribute('style', 'padding: 14px 20px; width: 25%; font-size:18px; border-radius: 7px; background-color: #6b6b6b; color: #FFFFFF; font-family: &apos;Raleway&apos;, sans-serif; font-weight: bolder;');
+          gen_btn.setAttribute('style', 'padding: 14px 20px; width: 25%; font-size:18px; border-radius: 7px; background-color: #6b6b6b; color: #FFFFFF; margin-bottom: 1rem; font-family: &apos;Raleway&apos;, sans-serif; font-weight: bolder;');
 
           let reset_btn = document.createElement('input');
           reset_btn.setAttribute('type', 'submit');
@@ -70,6 +69,17 @@
           reset_btn.setAttribute('onclick', 'location.reload()');
           reset_btn.setAttribute('style', 'padding: 14px 20px; width: 25%; font-size:18px; border-radius: 7px; background-color: #6b6b6b; color: #FFFFFF; font-family: &apos;Raleway&apos;, sans-serif; font-weight: bolder;');
 
+          let color_desc = document.createElement('label');
+          color_desc.id = 'color_desc';
+          color_desc.setAttribute('style', 'margin-bottom: 1rem;');
+          color_desc.innerHTML  = "COLOR OPTIONS";
+
+          document.body.appendChild(color_desc);
+
+          for (j = 0; j < 1; j++){
+           let lineBreak = document.createElement('br');
+           document.body.appendChild(lineBreak);
+          }
 
           for (i = 0; i < zones; i++){
 
@@ -93,10 +103,12 @@
           }
 
           document.body.appendChild(gen_btn);
+
           for (j = 0; j < 1; j++){
            let lineBreak = document.createElement('br');
            document.body.appendChild(lineBreak);
           }
+          
           document.body.appendChild(reset_btn);
           
         }
@@ -104,8 +116,7 @@
         function genZones(){
          alert ("For best results, set brightness to maximum desired and add a diffusion layer to your display.");
          console.error("Not finished...yet.");
-
-        document.writeln('');
+         document.writeln('<title>Aurora</title>');
 
 
         }
