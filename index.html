@@ -18,7 +18,7 @@
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-config" content="https://github.com/kgeok/Aurora/raw/main/icons/browserconfig.xml">
     <body>
-        <section>
+        <section id="uip1">
         <h1>aurora</h1>
         <br/>
         <noscript>Please Enable JavaScript to use this app</noscript>
@@ -31,7 +31,8 @@
         <input type="number" id="zones_txt" placeholder="1-20" min="1" max="20"/>
         <br/>
         <input type="submit" id="zones_btn" value="Next" onclick="genZoneOptions()"/>
-
+        </section>
+        
         <script type="text/javascript">
         
         function genZoneOptions(){
@@ -54,6 +55,7 @@
 
           let options = document.createElement('input');
           options.setAttribute('type', 'color');
+          
 
           let gen_btn = document.createElement('input');
           gen_btn.setAttribute('type', 'submit');
@@ -64,7 +66,7 @@
 
           let reset_btn = document.createElement('input');
           reset_btn.setAttribute('type', 'submit');
-          reset_btn.id = 'gen_btn';
+          reset_btn.id = 'reset_btn';
           reset_btn.setAttribute('value', 'Reset');
           reset_btn.setAttribute('onclick', 'location.reload()');
           reset_btn.setAttribute('style', 'padding: 14px 20px; width: 25%; font-size:18px; border-radius: 7px; background-color: #6b6b6b; color: #FFFFFF; font-family: &apos;Raleway&apos;, sans-serif; font-weight: bolder;');
@@ -74,6 +76,7 @@
           color_desc.setAttribute('style', 'margin-bottom: 1rem;');
           color_desc.innerHTML  = "COLOR OPTIONS";
 
+          
           document.body.appendChild(color_desc);
 
           for (j = 0; j < 1; j++){
@@ -113,20 +116,34 @@
           
         }
         
+        
+
         function genZones(){
-         alert ("For best results, set brightness to maximum desired and add a diffusion layer to your display.");
-         console.error("Not finished...yet.");
-         document.writeln('<title>Aurora</title>');
+        // alert ("For best results, set brightness to maximum desired and add a diffusion layer to your display. Refresh the app to start over.");
+        document.getElementById("uip1").remove();
+        document.getElementById("footer").remove();
+        document.getElementById("gen_btn").remove();
+        document.getElementById("color_desc").remove();
+        document.getElementById("reset_btn").remove();
+        
+         for (i = 0; i < zones; i++){
+        
+            let grid = document.createElement('canvas');
+            grid.id = 'grid'+ i;
+            grid.getContext('2d');
+            grid.getContext('2d').fillStyle=document.getElementById(i).value;
+            grid.getContext('2d').fillRect(10,50,80,80);
+            document.body.appendChild(grid);
+            document.getElementById(i).remove();
 
 
+         }
         }
 
         </script>
 
-        </section>
-        <section>
-
+        
+        <section id="footer">
             <h4>With &#129505; by Kevin George</h4>
-
         </section>
     </body>
