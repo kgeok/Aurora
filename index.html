@@ -13,12 +13,12 @@
         <section>
         <h1>aurora</h1>
         <br/>
-        <h4>by Kevin George</h4>
+        <noscript>Please Enable JavaScript to use this app</noscript>
         <br/>
         <br/>
         </section>
         <section>
-        <label id="zones_lbl">ZONES</label>
+        <label id="zones_lbl">GRID SIZE</label>
         <br/>
         <input type="number" id="zones_txt" placeholder="1-20" min="1" max="20"/>
         <br/>
@@ -29,19 +29,19 @@
         function genZoneOptions(){
           var zonesinput = Math.abs(document.getElementById('zones_txt').value);
           if (zonesinput > 20){
-            alert("Sorry, at this time, only 20 Zones are supported at a time.")
+            alert("Sorry, only a max of 20x20 is supported at this time.")
             zonesinput = 20;
-            console.error("Input not Valid, setting to max supported.");
+            console.error("Input not valid, setting to max supported...");
           }
 
           if (zonesinput == 0){
             alert("Please Enter a Number greater than 0")
             zonesinput = 1;
-            console.error("Input not Valid, setting to 1");
+            console.error("Input not Valid, setting to 1...");
           }
 
           zones = zonesinput * zonesinput;
-          console.log("Zones:");
+          console.log("Full Size:");
           console.log(zones);
 
           let options = document.createElement('input');
@@ -52,14 +52,15 @@
           gen_btn.id = 'gen_btn';
           gen_btn.setAttribute('value', 'Create');
           gen_btn.setAttribute('onclick', 'genZones()');
+          gen_btn.setAttribute('style', 'padding: 14px 20px; width: 25%; font-size:18px; border-radius: 7px; background-color: #6b6b6b; color: #FFFFFF; font-family: &apos;Raleway&apos;, sans-serif; font-weight: bolder;');
 
           let reset_btn = document.createElement('input');
           reset_btn.setAttribute('type', 'submit');
           reset_btn.id = 'gen_btn';
           reset_btn.setAttribute('value', 'Reset');
           reset_btn.setAttribute('onclick', 'location.reload()');
+          reset_btn.setAttribute('style', 'padding: 14px 20px; width: 25%; font-size:18px; border-radius: 7px; background-color: #6b6b6b; color: #FFFFFF; font-family: &apos;Raleway&apos;, sans-serif; font-weight: bolder;');
 
-          
 
           for (i = 0; i < zones; i++){
 
@@ -83,17 +84,26 @@
           }
 
           document.body.appendChild(gen_btn);
+          for (j = 0; j < 1; j++){
+           let lineBreak = document.createElement('br');
+           document.body.appendChild(lineBreak);
+          }
           document.body.appendChild(reset_btn);
           
         }
         
         function genZones(){
          alert ("For best results, set brightness to maximum desired and add a diffusion layer to your display.")
-         console.log("Not finished...");
+         console.error("Not finished...yet.");
 
         }
 
         </script>
+
+        </section>
+        <section>
+
+            <h4>With &#129505; by Kevin George</h4>
 
         </section>
     </body>

@@ -24,6 +24,16 @@ h1 {
 
 h4 {
     font-size: 75%;
+    bottom: 0%;
+    justify-content: center;
+    position: fixed;
+}
+
+noscript {
+
+    color: red;
+    font-size: large;
+
 }
 
 #zones_txt {
@@ -53,5 +63,5 @@ h4 {
     font-size:18px;
     border-radius: 7px;
     background-color: #6b6b6b;
-    padding: 14px 20px
+    padding: 14px 20px;
 }
