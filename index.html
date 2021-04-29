@@ -81,6 +81,7 @@
 
           for (j = 0; j < 1; j++){
            let lineBreak = document.createElement('br');
+           lineBreak.id = "br";
            document.body.appendChild(lineBreak);
           }
 
@@ -88,9 +89,11 @@
 
             let options = document.createElement('input');
             options.setAttribute('type', 'color');
+            options.setAttribute('value', '#ffffff');
             options.setAttribute('id', i);
             if (i % zonesinput == 0){
             let lineBreak = document.createElement('br');
+            lineBreak.id = "br";
             document.body.appendChild(lineBreak);
             }
             document.body.appendChild(options);
@@ -102,6 +105,7 @@
 
           for (j = 0; j < 2; j++){
            let lineBreak = document.createElement('br');
+           lineBreak.id = "br";
            document.body.appendChild(lineBreak);
           }
 
@@ -109,14 +113,13 @@
 
           for (j = 0; j < 1; j++){
            let lineBreak = document.createElement('br');
+           lineBreak.id = "br";
            document.body.appendChild(lineBreak);
           }
           
           document.body.appendChild(reset_btn);
           
         }
-        
-        
 
         function genZones(){
         // alert ("For best results, set brightness to maximum desired and add a diffusion layer to your display. Refresh the app to start over.");
@@ -125,25 +128,44 @@
         document.getElementById("gen_btn").remove();
         document.getElementById("color_desc").remove();
         document.getElementById("reset_btn").remove();
-        
+        document.body.style.backgroundColor = "black";
+        for (i = 0; i < document.getElementsByTagName("BR").length; i++){
+
+        document.getElementById("br").remove();
+
+        }
+
+         var width = 100 / Math.sqrt(zones);
          for (i = 0; i < zones; i++){
-        
+            
             let grid = document.createElement('canvas');
-            grid.id = 'grid'+ i;
+            grid.id = 'zone'+ i;
             grid.getContext('2d');
             grid.getContext('2d').fillStyle=document.getElementById(i).value;
-            grid.getContext('2d').fillRect(10,50,80,80);
+            grid.setAttribute('style', 'height: 200%; width:' + width);
+            grid.getContext('2d').fillRect(0,0,window.innerWidth,window.innerHeight);
+           
+            if (i % Math.sqrt(zones) == 0){
+            let lineBreak = document.createElement('br');
+            lineBreak.id = "br";
+            document.body.appendChild(lineBreak);
+            }
             document.body.appendChild(grid);
+
             document.getElementById(i).remove();
 
 
          }
+
+
+
+
         }
 
         </script>
 
         
         <section id="footer">
-            <h4>With &#129505; by Kevin George</h4>
+            <h4>With &#129505; by <a href ="https://kgeok.github.io/">Kevin George</a></h4>
         </section>
     </body>
