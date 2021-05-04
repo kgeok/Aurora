@@ -57,7 +57,18 @@ body {
     -o-animation: fadeIn ease 0.25s;
     -ms-animation: fadeIn ease 0.25s;
 
-}
+    }
+    a {
+
+      color: black;
+      
+      }
+      
+      a:visited {
+      
+      color: black;
+      
+      }
 }
 
 @media (prefers-color-scheme: dark) {
@@ -74,6 +85,17 @@ body {
         -ms-animation: fadeIn ease 0.25s;
 
     }
+    a {
+
+      color: white;
+      
+      }
+      
+      a:visited {
+      
+      color: white;
+      
+      }
     }
 
 h1 {
@@ -106,6 +128,7 @@ noscript {
     margin-top: 1rem;
     margin-bottom: 1rem;
     border-radius: 7px;
+    -webkit-border-radius:0px;
   
  
 }
@@ -119,6 +142,7 @@ noscript {
     margin-top: 1rem;
     margin-bottom: 1rem;
     border-radius: 7px;
+    -webkit-border-radius:0px;
 }
 
 #zones_btn {
@@ -130,6 +154,7 @@ noscript {
     border-radius: 7px;
     background-color: #6b6b6b;
     padding: 14px 20px;
+    -webkit-border-radius:0px;
 }
 #import_btn {
     color: #FFFFFF;
@@ -140,16 +165,6 @@ noscript {
     border-radius: 7px;
     background-color: #6b6b6b;
     padding: 14px 20px;
+    -webkit-border-radius:0px;
 }
 
-a {
-
-color: white;
-
-}
-
-a:visited {
-
-color: white;
-
-}
