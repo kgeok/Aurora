@@ -1,3 +1,48 @@
+  @keyframes fadeIn {
+    0% {
+      opacity:0;
+    }
+    100% {
+      opacity:1;
+    }
+  }
+  
+  @-moz-keyframes fadeIn {
+    0% {
+      opacity:0;
+    }
+    100% {
+      opacity:1;
+    }
+  }
+  
+  @-webkit-keyframes fadeIn {
+    0% {
+      opacity:0;
+    }
+    100% {
+      opacity:1;
+    }
+  }
+  
+  @-o-keyframes fadeIn {
+    0% {
+      opacity:0;
+    }
+    100% {
+      opacity:1;
+    }
+  }
+  
+  @-ms-keyframes fadeIn {
+    0% {
+      opacity:0;
+    }
+    100% {
+      opacity:1;
+  }
+}
+
 @media (prefers-color-scheme: light) {
 body {
     font-family: 'Raleway', sans-serif;
@@ -6,6 +51,12 @@ body {
     background-color: #FFFFFF;
     color: black;
     margin:0 auto;
+    animation: fadeIn ease 0.25s;
+    -webkit-animation: fadeIn ease 0.25s;
+    -moz-animation: fadeIn ease 0.25s;
+    -o-animation: fadeIn ease 0.25s;
+    -ms-animation: fadeIn ease 0.25s;
+
 }
 }
 
@@ -16,11 +67,18 @@ body {
         text-align: center;
         background-color: #1d1d1d;
         color: white;
+        animation: fadeIn ease 0.25s;
+        -webkit-animation: fadeIn ease 0.25s;
+        -moz-animation: fadeIn ease 0.25s;
+        -o-animation: fadeIn ease 0.25s;
+        -ms-animation: fadeIn ease 0.25s;
+
     }
     }
 
 h1 {
     font-size: 400%;
+
 }
 
 h4 {

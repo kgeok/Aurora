@@ -36,8 +36,8 @@
         
         <script type="text/javascript">
 
-        let release = "debug";
-        let version = "0.2b";
+        let release = "prod";
+        let version = "0.2";
         
         function genZoneOptions(){
           var zonesinput = Math.abs(document.getElementById('zones_txt').value);
@@ -64,27 +64,27 @@
           gen_btn.setAttribute('type', 'submit');
           gen_btn.id = 'gen_btn';
           gen_btn.setAttribute('value', 'Create');
-          gen_btn.setAttribute('onclick', 'genZones("p2")');
-          gen_btn.setAttribute('style', 'padding: 14px 20px; width: 25%; font-size:18px; border-radius: 7px; background-color: #6b6b6b; color: #FFFFFF; margin-bottom: 1rem; font-family: &apos;Raleway&apos;, sans-serif; font-weight: bolder;');
+          gen_btn.setAttribute('onclick', 'genZones("coloroptions", zones)');
+          gen_btn.setAttribute('style', 'padding: 14px 20px; width: 25%; font-size:18px; border-radius: 7px; background-color: #6b6b6b; color: #FFFFFF; margin-bottom: 1rem; font-family: &apos;Raleway&apos;, sans-serif; font-weight: bolder; animation: fadeIn ease 0.25s; -webkit-animation: fadeIn ease 0.25s; -moz-animation: fadeIn ease 0.25s; -o-animation: fadeIn ease 0.25s; -ms-animation: fadeIn ease 0.25s;');
 
           let reset_btn = document.createElement('input');
           reset_btn.setAttribute('type', 'submit');
           reset_btn.id = 'reset_btn';
           reset_btn.setAttribute('value', 'Reset');
           reset_btn.setAttribute('onclick', 'location.reload()');
-          reset_btn.setAttribute('style', 'padding: 14px 20px; width: 25%; font-size:18px; border-radius: 7px; background-color: #6b6b6b; color: #FFFFFF; font-family: &apos;Raleway&apos;, sans-serif; font-weight: bolder;');
+          reset_btn.setAttribute('style', 'padding: 14px 20px; width: 25%; font-size:18px; border-radius: 7px; background-color: #6b6b6b; color: #FFFFFF; font-family: &apos;Raleway&apos;, sans-serif; font-weight: bolder; animation: fadeIn ease 0.25s; -webkit-animation: fadeIn ease 0.25s; -moz-animation: fadeIn ease 0.25s; -o-animation: fadeIn ease 0.25s; -ms-animation: fadeIn ease 0.25s;');
 
           let export_btn = document.createElement('input');
           export_btn.setAttribute('type', 'submit');
           export_btn.id = 'export_btn';
           export_btn.setAttribute('value', 'Export File');
           export_btn.setAttribute('onclick', 'exportJSONFile()');
-          export_btn.setAttribute('style', 'padding: 14px 20px; width: 25%; font-size:18px; border-radius: 7px; background-color: #6b6b6b; color: #FFFFFF; font-family: &apos;Raleway&apos;, sans-serif; font-weight: bolder;');
+          export_btn.setAttribute('style', 'padding: 14px 20px; width: 25%; font-size:18px; border-radius: 7px; background-color: #6b6b6b; color: #FFFFFF; font-family: &apos;Raleway&apos;, sans-serif; font-weight: bolder; animation: fadeIn ease 0.25s; -webkit-animation: fadeIn ease 0.25s; -moz-animation: fadeIn ease 0.25s; -o-animation: fadeIn ease 0.25s; -ms-animation: fadeIn ease 0.25s;');
 
 
           let color_desc = document.createElement('label');
           color_desc.id = 'color_desc';
-          color_desc.setAttribute('style', 'margin-bottom: 1rem;');
+          color_desc.setAttribute('style', 'margin-bottom: 1rem; animation: fadeIn ease 0.25s; -webkit-animation: fadeIn ease 0.25s; -moz-animation: fadeIn ease 0.25s; -o-animation: fadeIn ease 0.25s; -ms-animation: fadeIn ease 0.25s;');
           color_desc.innerHTML  = "COLOR OPTIONS";
 
           
@@ -102,6 +102,7 @@
             options.setAttribute('type', 'color');
             options.setAttribute('value', '#ffffff');
             options.setAttribute('id', i);
+            options.setAttribute('style', "animation: fadeIn ease 0.25s; -webkit-animation: fadeIn ease 0.25s; -moz-animation: fadeIn ease 0.25s; -o-animation: fadeIn ease 0.25s; -ms-animation: fadeIn ease 0.25s;")
             if (i % zonesinput == 0){
             let lineBreak = document.createElement('br');
             lineBreak.id = "br";
@@ -143,76 +144,67 @@
 
         function importJSONFile(){
 
-        alert("This feature will be released in an upcoming update.")
-
         let saveState = [];
-
-        var zones;
+        
         console.log(document.getElementById("fileSelect").files);
         let Parser = new FileReader();
         Parser.readAsText(document.getElementById("fileSelect").files[0]);
         Parser.onload = function() {
         saveStateJSON = JSON.parse(Parser.result);
+        
+        var zones = Object.keys(saveStateJSON).length;
+        
+        for (i = 0; i < zones; i++){
 
-        for (i = 0; i < 3; i++){
-
-        saveState[i] = saveStateJSON[i];
-          console.log(saveState[i]);
-
+            saveState[i] = saveStateJSON[i];
+            console.log(saveState[i]);
             let options = document.createElement('input');
             options.setAttribute('type', 'color');
             options.setAttribute('value', saveState[i]);
             options.setAttribute('id', i);
             options.setAttribute('style', 'hidden');
             document.body.appendChild(options);
-
-            zones = zones + 1;
-
         }
+        genZones("zoneoptions", zones);
 
-
-
-        genZones("p1");
         }
 
         }
 
-        function genZones(from){
+        function genZones(origin, numofzones){
 
         if (release == "prod"){
         alert ("For best results, set brightness to maximum desired and add a diffusion layer to your display. Refresh the app to start over.");
         }
-
-        if (from == "p1"){
-
-        document.getElementById("uip1").remove();
-        document.getElementById("footer").remove();
-        document.getElementById("zones_btn").remove();         
-        document.getElementById("import_btn").remove();
-        document.getElementById("zones_txt").remove();
-        document.getElementById("zones_lbl").remove();
+        //clean up UI
+        if (origin == "zoneoptions"){
+          document.getElementById("uip1").remove();
+          document.getElementById("footer").remove();
+          document.getElementById("zones_btn").remove();         
+          document.getElementById("import_btn").remove();
+          document.getElementById("zones_txt").remove();
+          document.getElementById("zones_lbl").remove();
 
         }
-        
-        if (from == "p2"){
 
-        document.getElementById("uip1").remove();
-        document.getElementById("footer").remove();
-        document.getElementById("gen_btn").remove();
-        document.getElementById("reset_btn").remove();
-        document.getElementById("export_btn").remove();
-        document.getElementById("color_desc").remove();
-
+        if (origin == "coloroptions"){
+          document.getElementById("uip1").remove();
+          document.getElementById("footer").remove();
+          document.getElementById("gen_btn").remove();
+          document.getElementById("reset_btn").remove();
+          document.getElementById("export_btn").remove();
+          document.getElementById("color_desc").remove();
+        //clean up line breaks
         for (i = 0; i < document.getElementsByTagName("BR").length; i++){
-
         document.getElementById("br").remove();
 
         }
         }
-        
+        //change bg color to black for better visibility
         document.body.style.backgroundColor = "black";
+        //building zones....
 
-        for (i = 0; i < zones; i++){
+        for (i = 0; i < numofzones; i++){
             
             let grid = document.createElement('canvas');
             grid.id = 'zone'+ i;
@@ -220,8 +212,9 @@
             grid.getContext('2d');
             grid.getContext('2d').fillStyle=document.getElementById(i).value;       
             grid.getContext('2d').fillRect(0,0,window.innerWidth,window.innerHeight);
+            grid.setAttribute('style', "animation: fadeIn ease 0.25s; -webkit-animation: fadeIn ease 0.25s; -moz-animation: fadeIn ease 0.25s; -o-animation: fadeIn ease 0.25s; -ms-animation: fadeIn ease 0.25s;")
            
-            if (i % Math.sqrt(zones) == 0){
+            if (i % Math.sqrt(numofzones) == 0){
             let lineBreak = document.createElement('br');
             lineBreak.id = "br";
             document.body.appendChild(lineBreak);
@@ -231,7 +224,6 @@
          }
 
         }
-
 
         function exportJSONFile(){
 
@@ -260,6 +252,6 @@
         </script>
         
         <section id="footer">
-            <h4>Version 0.2b, With &#129505; by <a href ="https://kgeok.github.io/">Kevin George</a></h4>
+            <h4>Version 0.2, With &#129505; by <a href ="https://kgeok.github.io/">Kevin George</a></h4>
         </section>
     </body>
