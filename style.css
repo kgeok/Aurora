@@ -128,7 +128,7 @@ noscript {
     margin-top: 1rem;
     margin-bottom: 1rem;
     border-radius: 7px;
-    -webkit-border-radius:0px;
+    -webkit-border-radius:7px;
   
  
 }
@@ -142,7 +142,7 @@ noscript {
     margin-top: 1rem;
     margin-bottom: 1rem;
     border-radius: 7px;
-    -webkit-border-radius:0px;
+    -webkit-border-radius:7px;
 }
 
 #zones_btn {
@@ -154,7 +154,7 @@ noscript {
     border-radius: 7px;
     background-color: #6b6b6b;
     padding: 14px 20px;
-    -webkit-border-radius:0px;
+    -webkit-border-radius:7px;
 }
 #import_btn {
     color: #FFFFFF;
@@ -165,6 +165,6 @@ noscript {
     border-radius: 7px;
     background-color: #6b6b6b;
     padding: 14px 20px;
-    -webkit-border-radius:0px;
+    -webkit-border-radius:7px;
 }
 
