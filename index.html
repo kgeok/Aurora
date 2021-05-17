@@ -33,6 +33,15 @@
         <input type="submit" id="import_btn" value="Import File" onclick='document.getElementById("fileSelect").click()'/>
         <input type="file" id="fileSelect" accept="application/json" style="display:none" onchange="importJSONFile()" />
         </section>
+
+        <script type="module">
+
+          import 'https://cdn.jsdelivr.net/npm/@pwabuilder/pwaupdate';
+          
+          const el = document.createElement('pwa-update');
+          document.body.appendChild(el);
+          
+          </script>
         
         <script type="text/javascript">
 
