@@ -1,6 +1,9 @@
 {
     "name": "Aurora",
     "short_name": "Aurora",
+    "orientation": "any"
+    "description": "Lighting App used in place of LED Lighting for certain Photography, best used with a diffusing layer.",
+    "categories": ["utilities"]
     "icons": [
         {
             "src": "https://raw.githubusercontent.com/kgeok/Aurora/main/icons/android-chrome-192x192.png",
