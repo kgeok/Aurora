@@ -156,6 +156,19 @@ noscript {
     padding: 14px 20px;
     -webkit-border-radius:7px;
 }
+
+#about {
+  color: #FFFFFF;
+  font-family: 'Raleway', sans-serif;
+  font-weight: bolder;
+  width: 25%;
+  font-size:18px;
+  border-radius: 7px;
+  background-color: #6b6b6b;
+  padding: 14px 20px;
+  -webkit-border-radius:7px;
+}
+
 #import_btn {
     color: #FFFFFF;
     font-family: 'Raleway', sans-serif;
