@@ -32,6 +32,7 @@
         <br/>
         <input type="submit" id="import_btn" value="Import File" onclick='document.getElementById("fileSelect").click()'/>
         <input type="file" id="fileSelect" accept="application/json" style="display:none" onchange="importJSONFile()" />
+        <input type="submit" id="about" value="About" onclick="About()"/>
         </section>
 
         <script type="module">
@@ -122,6 +123,7 @@
           }
           document.getElementById("zones_btn").remove();         
           document.getElementById("import_btn").remove();
+          document.getElementById("about").remove();
           document.getElementById("zones_txt").remove();
           document.getElementById("zones_lbl").remove();
 
@@ -188,9 +190,9 @@
         //clean up UI
         if (origin == "zoneoptions"){
           document.getElementById("uip1").remove();
-          document.getElementById("footer").remove();
           document.getElementById("zones_btn").remove();         
           document.getElementById("import_btn").remove();
+          document.getElementById("about").remove();
           document.getElementById("zones_txt").remove();
           document.getElementById("zones_lbl").remove();
 
@@ -198,7 +200,6 @@
 
         if (origin == "coloroptions"){
           document.getElementById("uip1").remove();
-          document.getElementById("footer").remove();
           document.getElementById("gen_btn").remove();
           document.getElementById("reset_btn").remove();
           document.getElementById("export_btn").remove();
@@ -234,6 +235,12 @@
 
         }
 
+        function About(){
+
+        prompt("Aurora, Version " + version + ", With <3 by Kevin George.\n", "http://kgeok.github.io");
+
+        }
+
         function exportJSONFile(){
 
           let saveState = [];
@@ -260,7 +267,4 @@
 
         </script>
         
-        <section id="footer">
-            <h4>&nbsp;&nbsp;Version 0.2.1, With &#10084;&#65039; by <a href ="https://kgeok.github.io/">Kevin George</a></h4><br><br></h4>
-        </section>
     </body>
