@@ -48,7 +48,7 @@
         <script type="text/javascript">
 
         let release = "prod";
-        let version = "0.2.2";
+        let version = "0.2.3";
         
         function genZoneOptions(){
           var zonesinput = Math.abs(document.getElementById('zones_txt').value);
@@ -76,26 +76,54 @@
           gen_btn.id = 'gen_btn';
           gen_btn.setAttribute('value', 'Create');
           gen_btn.setAttribute('onclick', 'genZones("coloroptions", zones)');
-          gen_btn.setAttribute('style', 'padding: 14px 20px; width: 25%; -webkit-border-radius:7px; font-size:18px; border-radius: 7px; background-color: #6b6b6b; color: #FFFFFF; margin-bottom: 1rem; font-family: &apos;Raleway&apos;, sans-serif; font-weight: bolder; animation: fadeIn ease 0.25s; -webkit-animation: fadeIn ease 0.25s; -moz-animation: fadeIn ease 0.25s; -o-animation: fadeIn ease 0.25s; -ms-animation: fadeIn ease 0.25s;');
+          gen_btn.style.padding = "14px 20px";
+          gen_btn.style.width = "25%";
+          gen_btn.style.fontSize = "18px"; 
+          gen_btn.style.borderRadius = "7px"; 
+          gen_btn.style.backgroundColor = "#6b6b6b"; 
+          gen_btn.style.color = "#FFFFFF"; 
+          gen_btn.style.marginBottom = "1px";
+          gen_btn.style.fontFamily = "'Raleway', sans-serif"; 
+          gen_btn.style.fontWeight = "bolder";
+          gen_btn.style.animation = "fadeIn ease 0.25s"; 
 
           let reset_btn = document.createElement('input');
           reset_btn.setAttribute('type', 'submit');
           reset_btn.id = 'reset_btn';
           reset_btn.setAttribute('value', 'Reset');
           reset_btn.setAttribute('onclick', 'location.reload()');
-          reset_btn.setAttribute('style', 'padding: 14px 20px; width: 25%; -webkit-border-radius:7px; font-size:18px; border-radius: 7px; background-color: #6b6b6b; color: #FFFFFF; font-family: &apos;Raleway&apos;, sans-serif; font-weight: bolder; animation: fadeIn ease 0.25s; -webkit-animation: fadeIn ease 0.25s; -moz-animation: fadeIn ease 0.25s; -o-animation: fadeIn ease 0.25s; -ms-animation: fadeIn ease 0.25s;');
+          reset_btn.style.padding = "14px 20px";
+          reset_btn.style.width = "25%";
+          reset_btn.style.fontSize = "18px"; 
+          reset_btn.style.borderRadius = "7px"; 
+          reset_btn.style.backgroundColor = "#6b6b6b"; 
+          reset_btn.style.color = "#FFFFFF"; 
+          reset_btn.style.marginBottom = "1px";
+          reset_btn.style.fontFamily = "'Raleway', sans-serif"; 
+          reset_btn.style.fontWeight = "bolder";
+          reset_btn.style.animation = "fadeIn ease 0.25s"; 
 
           let export_btn = document.createElement('input');
           export_btn.setAttribute('type', 'submit');
           export_btn.id = 'export_btn';
           export_btn.setAttribute('value', 'Export File');
           export_btn.setAttribute('onclick', 'exportJSONFile()');
-          export_btn.setAttribute('style', 'padding: 14px 20px; width: 25%; -webkit-border-radius:7px; font-size:18px; border-radius: 7px; background-color: #6b6b6b; color: #FFFFFF; font-family: &apos;Raleway&apos;, sans-serif; font-weight: bolder; animation: fadeIn ease 0.25s; -webkit-animation: fadeIn ease 0.25s; -moz-animation: fadeIn ease 0.25s; -o-animation: fadeIn ease 0.25s; -ms-animation: fadeIn ease 0.25s;');
-
+          export_btn.style.padding = "14px 20px";
+          export_btn.style.width = "25%";
+          export_btn.style.fontSize = "18px"; 
+          export_btn.style.borderRadius = "7px"; 
+          export_btn.style.backgroundColor = "#6b6b6b"; 
+          export_btn.style.color = "#FFFFFF"; 
+          export_btn.style.marginBottom = "1px";
+          export_btn.style.fontFamily = "'Raleway', sans-serif"; 
+          export_btn.style.fontWeight = "bolder";
+          export_btn.style.animation = "fadeIn ease 0.25s"; 
 
           let color_desc = document.createElement('label');
           color_desc.id = 'color_desc';
-          color_desc.setAttribute('style', 'margin-bottom: 1rem; animation: fadeIn ease 0.25s; -webkit-animation: fadeIn ease 0.25s; -moz-animation: fadeIn ease 0.25s; -o-animation: fadeIn ease 0.25s; -ms-animation: fadeIn ease 0.25s;');
+          color_desc.style.marginBottom = "1rem";
+          color_desc.style.animation = "fadeIn ease 0.25s";
+          color_desc.setAttribute('style', '-webkit-animation: fadeIn ease 0.25s; -moz-animation: fadeIn ease 0.25s; -o-animation: fadeIn ease 0.25s; -ms-animation: fadeIn ease 0.25s;');
           color_desc.innerHTML  = "COLOR OPTIONS";
 
           
