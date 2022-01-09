@@ -1,5 +1,7 @@
 # Aurora
-Light Diffuser Web App for Photos
+Light Diffuser Web App for Photos. 
+Use your existing displays instead of buying new hardware for lighting!
+
 
 Features:
 - Dark mode support
